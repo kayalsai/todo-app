@@ -72,6 +72,12 @@
     .notes{
         font-size:25px;
     }
+    .navbar-toggler{
+        display: none;
+    }
+    .navbar>.container-fluid{
+        justify-content: left !important;
+    }
 }
 
 .task {
