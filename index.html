@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+ 
+<html lang="en" ng-app="todoApp">
+  <!-- ng-app which bootstrap the angularjs application -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>todoApp</title>
+
+  <!--  (include angularjs) -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+  <script src="js/app.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+</head>
+<body>
+<div class="containers" ng-controller="titlecontroller">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-color">
+      <div class="container-fluid">
+
+        <span class="notes"><i class="fa-solid fa-book"></i></span>
+
+        <p class=" navbar_font pt-2">{{greeting()}} <span>{{name}} !!</span></p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+        </div>
+      </div>
+    </nav>
+    <!-- userName -->
+    <div class="container my-5">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="card_username">
+          <div class="d-flex  justify-content-center align-items-center mt-4">
+            <div>
+              <img src="./assets/todo.jpg" class="images">
+            </div>
+
+          </div>
+          <div class="d-flex  justify-content-center align-items-center mt-4">
+            <div class="task">
+              Welcome to Go Task :)
+            </div>
+
+          </div>
+          <div class="d-flex  justify-content-center align-items-center mt-4">
+            <div class="task_content text-center">
+              Designed to help individuals and teams manage their tasks & priorities.
+            </div>
+
+          </div>
+          <div class="d-flex  justify-content-center align-items-center mt-4">
+            <div class="">
+              <input type="text" class="input_task" ng-model="username">
+            </div>
+
+          </div>
+          <div class="d-flex  justify-content-center align-items-center my-5">
+            <div>
+              <button class="btn  btn-color" ng-click="getStarted()">Let's Get Started<span class="icon"><i
+                    class="fa-solid fa-arrow-right"></i></span></button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- todo  app-->
+  <div class="container mt-5 mb-5">
+    <div class="d-flex  justify-content-center align-items-center">
+      <div class="card">
+        <div class="mt-5 text_format text-center">
+          <button class="btn  btn-color">ToDo Application</button>
+
+        </div>
+        <div class="app mt-5 text-center">
+          A Simple and Easy to Use :)
+        </div>
+        <div ng-controller="TodoController">
+          <div class="row mt-5" style="padding-left:15px;">
+            <div class="col-7">
+              <div class="input">
+                <input type="text" class="input" ng-model="newTask">
+              </div>
+            </div>
+            <!-- to add the task button -->
+            <div class="col-2">
+              <div class="btn_add" ng-click="addTask()"><i class="fa-solid fa-plus"></i></div>
+            </div>
+          </div>
+          <div class="accordian mt-4">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <div class="card_Content" ng-repeat="task in tasks track by $index">
+                    <div class="row">
+                      <div class="col-2">
+                        <div class="circle">
+                          <span class="tick"> <i class="fa-solid fa-check"></i></span>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <span class="card_format text-center">{{task}}</span>
+                      </div>
+                      <!-- to edit (open the dialog) and delete the task button -->
+                      <div class="col-2">
+                        <div class="edit " ng-click="editTask($index)" data-bs-toggle="modal"
+                          data-bs-target="#exampleModal-{{$index}}"><i class="fas fa-edit"></i></div>
+
+                      </div>
+                      <div class="col-2">
+                        <div class="btn_delete " ng-click="removeTask($index)"><i class="fa-solid fa-trash"></i></div>
+                      </div>
+                      <!-- model -->
+
+                      <div class="modal fade" id="exampleModal-{{$index}}" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header updateText">
+                              <div class="modal-title" id="exampleModalLabel">Update Task</div>
+                              <button type="button" class="btn-close " data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="container  d-flex align-items-center justify-content-center mt-2 mb-3 ">
+                                <input type="text" class="update_input" ng-model="editedTask">
+                              </div>
+                            </div>
+                            <div class="modal-footer ">
+                              <button type="button" class="cancel_btn" data-bs-dismiss="modal">No thanks</button>
+
+                              <button type="button" class="cancel_btn"
+                                ng-click="updateTask($index,editedTask)">Ok</button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

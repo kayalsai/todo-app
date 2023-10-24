@@ -1,0 +1,293 @@
+/* navbar styling */
+.bg-color {
+    background-color: rgb(16, 16, 84) !important;
+    color: white
+}
+
+.navbar_font {
+    color: white;
+    font-weight: 500;
+    font-size: 20px !important;
+}
+
+@media only screen and (min-width:310px) and (max-width:420px) {
+    .navbar_font {
+        font-size: 13px !important;
+    }
+}
+
+@media only screen and (min-width:310px) and (max-width:767px) {
+    .about {
+        margin-top: 25px !important;
+    }
+}
+
+.navbar-nav {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.nav-link {
+    color: white !important
+}
+
+.navbar-toggler {
+    color: white !important;
+    background-color: white !important;
+    font-size: 16px;
+
+}
+
+.me {
+    margin-left: auto !important;
+}
+/* todo app card styling */
+.card {
+    width: 50%;
+    /* min-height: 80vh; */
+}
+
+.card_username {
+    min-height: 50vh;
+    width: 50%;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 20px;
+}
+
+@media screen and (max-width:992px) {
+    .card {
+        width: 100%
+    }
+
+    .card_username {
+        width: 100%
+    }
+
+    .images {
+        width: 300px;
+    }
+}
+
+.task {
+    font-size: 20px;
+    color: #32418E;
+    font-weight: 500
+}
+
+.task_content {
+    font-size: 15px;
+    font-weight: 500;
+    color: #514444
+}
+
+.icon {
+    margin-left: 10px;
+    font-weight: 700
+}
+
+.btn-color {
+    background-color: rgb(16, 16, 84) !important;
+    font-size: 20px !important;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 20px 50px !important;
+    border-radius: 10px !important;
+    color: white !important
+}
+
+.btn-color:hover {
+    background-color: white !important;
+    color: #32418E !important;
+    font-weight: 500;
+
+}
+
+.cancel_btn {
+    background-color: white !important;
+    border: none;
+    font-size: 15px !important;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgb(16, 16, 84) !important;
+}
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.modal-footer {
+    border-top: none !important;
+}
+.app {
+    font-size: 20px;
+    color: #32418E;
+    font-weight: 700
+}
+
+.card_Content {
+    border: 2px solid transparent;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    height: 60px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-left: 3px solid green;
+}
+
+.btn_delete {
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    color: rgb(174, 13, 13);
+    text-align: center;
+    padding-top: 10px
+}
+
+.btn_add {
+    width: 50px;
+    height: 50px;
+    color: green;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px
+}
+
+.btn_delete:hover {
+    background-color: white;
+    color: rgb(174, 13, 13);
+    font-weight: 700;
+
+}
+
+.btn_add:hover {
+    background-color: white;
+    color: green;
+    font-weight: 700;
+}
+
+.card_format {
+    font-weight: 500;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
+    color: green
+}
+
+.circle {
+    border: 3px solid green;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: green;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.tick {
+    color: white;
+
+    margin-top: -5px;
+    font-weight: 700 !important;
+}
+
+.input {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: green;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid transparent;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.input_task {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: #32418E;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid transparent;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.edit {
+    width: 50px;
+    height: 50px;
+    color: rgb(16, 16, 84);
+    margin-top: 5px;
+    text-align: center;
+    padding-top: 10px
+}
+
+@media screen and (max-width:500px) {
+    .card_format {
+        padding-left: 30px;
+    }
+}
+
+@media screen and (max-width:2000px) {
+    .card_Content {
+        margin-left: 0px;
+    }
+
+    .card_format {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+
+
+.notes {
+    color: white;
+    margin: 15px;
+
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 15px;
+}
+
+.updateText {
+    font-size: 15px;
+    color: rgb(16, 16, 84);
+    font-weight: 500;
+    letter-spacing:1px;
+}
+
+.btn-close {
+    border: 2px solid black !important;
+    border-radius: 50% !important;
+    opacity: 1 !important;
+
+    font-size: 8px !important;
+}
+
+.update_input {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    border-radius: 10px;
+    /* width: 100%; */
+    height: 50px;
+    border: 2px solid rgb(16, 16, 84) !important;
+    outline: none;
+}
+
+.fa-check::before {
+    position: relative;
+    left: 2px
+}
