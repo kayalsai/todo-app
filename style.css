@@ -142,7 +142,8 @@
     margin-top: 5px;
     color: rgb(174, 13, 13);
     text-align: center;
-    padding-top: 10px
+    padding-top: 10px;
+    margin-left:-3px;
 }
 
 .btn_add {
